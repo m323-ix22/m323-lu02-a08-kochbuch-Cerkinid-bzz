@@ -1,10 +1,11 @@
+"""
+Dieses Modul enthält Funktionen zur Verarbeitung und Anpassung von Rezepten aus einem JSON-basierten Kochbuch.
+"""
+
 import json
 from typing import Dict, Any
 
-"""
-Grüess Seebach
-"""
-
+# Grüess Seebach
 
 def load_recipe(json_string: str) -> Dict[str, Any]:
     """
