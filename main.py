@@ -21,9 +21,9 @@ def adjust_recipe(recipe: Dict[str, Any], num_people: int) -> Dict[str, Any]:
 
     # Erstellen eines neuen, angepassten Rezepts
     adjusted_recipe = {
-        "title": recipe['title'],
-        "ingredients": adjusted_ingredients,
-        "servings": num_people
+        'title': recipe['title'],
+        'ingredients': adjusted_ingredients,
+        'servings': num_people
     }
 
     return adjusted_recipe
@@ -31,14 +31,17 @@ def adjust_recipe(recipe: Dict[str, Any], num_people: int) -> Dict[str, Any]:
 
 if __name__ == '__main__':
     # Beispiel für die Datenstruktur eines Rezepts
-    recipe_json = '{"title": "Spaghetti Bolognese", "ingredients": {"Spaghetti": 400, "Tomato Sauce": 300, "Minced Meat": 500}, "servings": 4}'
+    recipe_json = (
+        '{"title": "Spaghetti Bolognese", "ingredients": {"Spaghetti": 400, '
+        '"Tomato Sauce": 300, "Minced Meat": 500}, "servings": 4}'
+    )
 
     # Rezept laden
-    recipe = load_recipe(recipe_json)
+    loaded_recipe = load_recipe(recipe_json)
 
     # Rezept an die Anzahl der Personen anpassen
-    num_people = 2
-    adjusted_recipe = adjust_recipe(recipe, num_people)
+    adjusted_people = 2
+    final_adjusted_recipe = adjust_recipe(loaded_recipe, adjusted_people)
 
     # Ausgeben des angepassten Rezepts
-    print(json.dumps(adjusted_recipe, indent=4))
+    print(json.dumps(final_adjusted_recipe, indent=4))
